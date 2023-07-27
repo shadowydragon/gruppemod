@@ -1,0 +1,21 @@
+{
+  "item.gruppemod.itemname": "Example Item",
+  "item.gruppemod.raw_sapphire": "Raw Sapphier",
+  "item.gruppemod.sapphire": "Sapphier",
+
+  "item.gruppemod.metal_detector": "Metaldetector",
+
+  "item.gruppe.strawberry": "Strawberry",
+
+  "block.gruppemod.sapphire_block": "Sapphier Block",
+  "block.gruppemod.raw_sapphire_block": "Raw Sapphier Block",
+  "block.gruppemod.sapphire_ore": "Sapphier Ore",
+  "block.gruppemod.nether_sapphire_ore": "Nether Sapphier Ore",
+  "block.gruppemod.deepslate_sapphire_ore": "Deepslate Sapphier Ore",
+  "block.gruppemod.end_stone_sapphire_ore": "Endstone Sapphier Ore",
+
+  "creativetab.mod_material_tab": "Mod Materials",
+  "creativetab.mod_block_tab": "Mod Blocks",
+  "creativetab.mod_useable_items": "Mod Useable Items",
+  "creativetab.mod_food_items_tab": "Mod Food Items"
+}

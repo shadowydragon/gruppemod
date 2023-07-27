@@ -37,11 +37,10 @@ public class ModCrativeTabs {
             () -> CreativeModeTab
                     .builder()
                     .title(Component.translatable("creativetab.mod_useable_items"))
-                    .icon(() -> new ItemStack(ModItems.METAL_DETECTOR.get()))
+                    .icon(() -> new ItemStack(ModUseableItems.METAL_DETECTOR.get()))
                     .displayItems((pIn, pOut) ->
-                            pOut.accept(ModItems.METAL_DETECTOR.get()))
-                    .build()
-    );
+                            ModUseableItems.ITEMS.getEntries().forEach(itemRegistryObject -> pOut.accept(itemRegistryObject.get())))
+                    .build());
 
     public static final RegistryObject<CreativeModeTab> MOD_BLOCK_TAB =
             CREATIVE_MODE_TABS.register("mod_block_tab",

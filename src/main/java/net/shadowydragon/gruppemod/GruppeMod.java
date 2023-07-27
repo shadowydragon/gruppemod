@@ -13,9 +13,11 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.shadowydragon.gruppemod.block.ModBlocks;
+import net.shadowydragon.gruppemod.block.ModOreBlocks;
 import net.shadowydragon.gruppemod.item.ModCrativeTabs;
 import net.shadowydragon.gruppemod.item.ModFoodItems;
 import net.shadowydragon.gruppemod.item.ModItems;
+import net.shadowydragon.gruppemod.item.ModUseableItems;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -31,8 +33,10 @@ public class GruppeMod {
 
         ModCrativeTabs.register(modEventBus);
         ModItems.register(modEventBus);
+        ModUseableItems.register(modEventBus);
         ModFoodItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModOreBlocks.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);

@@ -12,8 +12,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.shadowydragon.gruppemod.block.ModBlocks;
-import net.shadowydragon.gruppemod.block.ModOreBlocks;
+import net.shadowydragon.gruppemod.block.*;
 import net.shadowydragon.gruppemod.item.ModCrativeTabs;
 import net.shadowydragon.gruppemod.item.ModFoodItems;
 import net.shadowydragon.gruppemod.item.ModItems;
@@ -37,6 +36,10 @@ public class GruppeMod {
         ModFoodItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModOreBlocks.register(modEventBus);
+        ModLogBlocks.register(modEventBus);
+        ModLeaveBlocks.register(modEventBus);
+        ModSaplingBlocks.register(modEventBus);
+
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);

@@ -9,6 +9,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowydragon.gruppemod.GruppeMod;
 import net.shadowydragon.gruppemod.block.ModBlocks;
+import net.shadowydragon.gruppemod.block.ModLeaveBlocks;
+import net.shadowydragon.gruppemod.block.ModLogBlocks;
+import net.shadowydragon.gruppemod.block.ModSaplingBlocks;
 
 public class ModCrativeTabs {
 
@@ -66,6 +69,20 @@ public class ModCrativeTabs {
                             .displayItems((pParameters, pOutput) -> {
 
                                 ModFoodItems.FOODS.getEntries().forEach(itemRegistryObject -> pOutput.accept(itemRegistryObject.get()));
+                            })
+                            .build());
+
+    public static final RegistryObject<CreativeModeTab> MOD_TREE_ITEMS_TAB =
+            CREATIVE_MODE_TABS.register("mod_tree_items_tab",
+                    ()->CreativeModeTab
+                            .builder()
+                            .icon(() -> new ItemStack(ModLeaveBlocks.EBONY_LEAVES.get()))
+                            .title(Component.translatable("creativetab.mod_tree_items_tab"))
+                            .displayItems((pParameters, pOutput) -> {
+
+                                ModLogBlocks.LOGS.getEntries().forEach(itemRegistryObject -> pOutput.accept(itemRegistryObject.get()));
+                                ModLeaveBlocks.LEAVES.getEntries().forEach(blockRegistryObject -> pOutput.accept(blockRegistryObject.get()));
+                                ModSaplingBlocks.SAPLINGS.getEntries().forEach(blockRegistryObject -> pOutput.accept(blockRegistryObject.get()));
                             })
                             .build());
 }

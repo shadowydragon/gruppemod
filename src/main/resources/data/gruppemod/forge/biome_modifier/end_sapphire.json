@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#is_end",
+  "features": "gruppemod:end_sapphire_ore_placed_key",
+  "step": "underground_ores"
+}

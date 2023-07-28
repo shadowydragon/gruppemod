@@ -17,6 +17,7 @@ import net.shadowydragon.gruppemod.item.ModCrativeTabs;
 import net.shadowydragon.gruppemod.item.ModFoodItems;
 import net.shadowydragon.gruppemod.item.ModItems;
 import net.shadowydragon.gruppemod.item.ModUseableItems;
+import net.shadowydragon.gruppemod.networking.ModMessages;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -52,6 +53,8 @@ public class GruppeMod {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+
+        ModMessages.register();
     }
 
     // Add the example block item to the building blocks tab

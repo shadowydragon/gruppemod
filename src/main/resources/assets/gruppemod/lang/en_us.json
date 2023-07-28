@@ -18,5 +18,12 @@
   "creativetab.mod_block_tab": "Mod Blocks",
   "creativetab.mod_useable_items": "Mod Useable Items",
   "creativetab.mod_food_items_tab": "Mod Food Items",
-  "creativetab.mod_tree_items_tab": "Mod Tree Items"
+  "creativetab.mod_tree_items_tab": "Mod Tree Items",
+
+  "key.category.gruppemod.gruppe": "Gruppe Mod",
+  "key.gruppemod.drink_water": "Drink Water",
+  "key.gruppemod.place_holder": "Place Holder",
+
+  "message.gruppemod.drink_water": "You have drunk Water",
+  "message.gruppemod.no_drink_water": "There is no water around you to drink"
 }

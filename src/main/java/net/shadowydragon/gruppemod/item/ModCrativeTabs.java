@@ -8,10 +8,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowydragon.gruppemod.GruppeMod;
-import net.shadowydragon.gruppemod.block.ModBlocks;
-import net.shadowydragon.gruppemod.block.ModLeaveBlocks;
-import net.shadowydragon.gruppemod.block.ModLogBlocks;
-import net.shadowydragon.gruppemod.block.ModSaplingBlocks;
+import net.shadowydragon.gruppemod.block.*;
 
 public class ModCrativeTabs {
 
@@ -50,13 +47,11 @@ public class ModCrativeTabs {
                     ()->CreativeModeTab
                             .builder()
                             .icon(() -> new ItemStack(ModBlocks.SAPPHIRE_BLOCK.get()))
-                            .title(Component.translatable("creativetab.mod_material_tab"))
+                            .title(Component.translatable("creativetab.mod_block_tab"))
                             .displayItems((pParameters, pOutput) -> {
 
                                 ModBlocks.BLOCKS.getEntries().forEach(blockRegistryObject -> pOutput.accept(blockRegistryObject.get()));
-
-                                //pOutput.accept(ModBlocks.SAPPHIER_BLOCK.get());
-                                //pOutput.accept(ModBlocks.RAW_SAPPHIER_BLOCK.get());
+                                ModCustomModelBlocks.BLOCKS.getEntries().stream().forEach(blockRegistryObject -> pOutput.accept(blockRegistryObject.get()));
                             })
                             .build());
 

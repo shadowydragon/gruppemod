@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "gruppemod:block/gem_infusing_station"
+    },
+    "facing=south": {
+      "model": "gruppemod:block/gem_infusing_station",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gruppemod:block/gem_infusing_station",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "gruppemod:block/gem_infusing_station",
+      "y": 90
+    }
+  }
+}

@@ -1,6 +1,7 @@
 package net.shadowydragon.gruppemod;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -13,6 +14,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.shadowydragon.gruppemod.block.*;
+import net.shadowydragon.gruppemod.block.entity.ModBlockEntities;
+import net.shadowydragon.gruppemod.gui.ModMenuTypes;
+import net.shadowydragon.gruppemod.gui.geminfusingstation.GemInfusingStationScreen;
 import net.shadowydragon.gruppemod.item.ModCrativeTabs;
 import net.shadowydragon.gruppemod.item.ModFoodItems;
 import net.shadowydragon.gruppemod.item.ModItems;
@@ -39,7 +43,12 @@ public class GruppeMod {
         ModOreBlocks.register(modEventBus);
         ModLogBlocks.register(modEventBus);
         ModLeaveBlocks.register(modEventBus);
+        ModCustomModelBlocks.register(modEventBus);
         ModSaplingBlocks.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
+
+        ModMenuTypes.register(modEventBus);
 
 
         // Register the commonSetup method for modloading
@@ -78,6 +87,8 @@ public class GruppeMod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             // Some client setup code
+
+            MenuScreens.register(ModMenuTypes.GEM_INFUSING_STATION_MENU.get(), GemInfusingStationScreen::new);
 
         }
     }

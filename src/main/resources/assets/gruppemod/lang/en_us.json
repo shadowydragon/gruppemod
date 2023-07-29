@@ -13,6 +13,7 @@
   "block.gruppemod.nether_sapphire_ore": "Nether Sapphier Ore",
   "block.gruppemod.deepslate_sapphire_ore": "Deepslate Sapphier Ore",
   "block.gruppemod.end_stone_sapphire_ore": "Endstone Sapphier Ore",
+  "block.gruppemod.gem_infusing_station": "Gem Infusing Station",
 
   "creativetab.mod_material_tab": "Mod Materials",
   "creativetab.mod_block_tab": "Mod Blocks",
@@ -25,5 +26,6 @@
   "key.gruppemod.place_holder": "Place Holder",
 
   "message.gruppemod.drink_water": "You have drunk Water\nYour Thirst level is: ",
-  "message.gruppemod.no_drink_water": "There is no water around you to drink"
+  "message.gruppemod.no_drink_water": "There is no water around you to drink",
+  "gruppemod.entitytitel.gem_infusing_station": "Gem Infusing Station"
 }

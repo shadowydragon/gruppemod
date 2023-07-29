@@ -9,6 +9,7 @@ import net.minecraftforge.network.simple.SimpleChannel;
 import net.shadowydragon.gruppemod.GruppeMod;
 import net.shadowydragon.gruppemod.networking.packet.DrinkWaterClientToServerPacket;
 import net.shadowydragon.gruppemod.networking.packet.ExampleClientToServerPacket;
+import net.shadowydragon.gruppemod.networking.packet.ThirstDataSyncServerToClientPacket;
 
 public class ModMessages {
     private static SimpleChannel INSTANCE;
@@ -34,6 +35,12 @@ public class ModMessages {
                 .decoder(DrinkWaterClientToServerPacket::new)
                 .encoder(DrinkWaterClientToServerPacket::toBytes)
                 .consumerMainThread(DrinkWaterClientToServerPacket::handle)
+                .add();
+
+        net.messageBuilder(ThirstDataSyncServerToClientPacket.class, packetID(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(ThirstDataSyncServerToClientPacket::new)
+                .encoder(ThirstDataSyncServerToClientPacket::toBytes)
+                .consumerMainThread(ThirstDataSyncServerToClientPacket::handle)
                 .add();
     }
 

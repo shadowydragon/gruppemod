@@ -1,23 +1,17 @@
 package net.shadowydragon.gruppemod.event;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.multiplayer.chat.report.ReportEnvironment;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.ai.attributes.Attribute;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.InputEvent;
+import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
-import net.minecraftforge.common.ForgeConfig;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.shadowydragon.gruppemod.GruppeMod;
+import net.shadowydragon.gruppemod.client.ThirstHudOverlay;
 import net.shadowydragon.gruppemod.networking.ModMessages;
 import net.shadowydragon.gruppemod.networking.packet.DrinkWaterClientToServerPacket;
-import net.shadowydragon.gruppemod.networking.packet.ExampleClientToServerPacket;
 import net.shadowydragon.gruppemod.util.KeyBinding;
 
-import java.util.logging.Logger;
 
 public class ClientEvents {
     @Mod.EventBusSubscriber(modid = GruppeMod.MODID, value = Dist.CLIENT)
@@ -46,6 +40,11 @@ public class ClientEvents {
         {
             event.register(KeyBinding.DRINKING_KEY);
             event.register(KeyBinding.PLACEHOLDER_KEY);
+        }
+
+        @SubscribeEvent
+        public static void onRegisterGuiOverlays(RegisterGuiOverlaysEvent event) {
+            event.registerAboveAll("thirst", ThirstHudOverlay.HUD_THIRST);
         }
     }
 

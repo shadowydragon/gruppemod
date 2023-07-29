@@ -24,6 +24,6 @@
   "key.gruppemod.drink_water": "Drink Water",
   "key.gruppemod.place_holder": "Place Holder",
 
-  "message.gruppemod.drink_water": "You have drunk Water",
+  "message.gruppemod.drink_water": "You have drunk Water\nYour Thirst level is: ",
   "message.gruppemod.no_drink_water": "There is no water around you to drink"
 }

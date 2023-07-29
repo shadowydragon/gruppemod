@@ -10,10 +10,13 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraftforge.common.data.SoundDefinition;
 import net.minecraftforge.network.NetworkEvent;
+import net.shadowydragon.gruppemod.networking.ModMessages;
+import net.shadowydragon.gruppemod.thirst.PlayerThirstProvider;
 
 import java.util.function.Supplier;
 
@@ -42,19 +45,28 @@ public class DrinkWaterClientToServerPacket {
             ServerPlayer player = context.getSender();
             ServerLevel level = player.serverLevel();
 
+
             //Check if player is near water
             if (hasWaterAroundThem(player, level, 1))
             {
-                player.sendSystemMessage(Component.translatable(MESSAGE_DRINK_WATER).withStyle(ChatFormatting.DARK_AQUA));
+
 
                 level.playSound(null, player.getOnPos(), SoundEvents.GENERIC_DRINK, SoundSource.PLAYERS,
                         0.5F, level.random.nextFloat() * 0.1F + 0.9F);
-                //TODO increase thirstlevel
+
+                player.getCapability(PlayerThirstProvider.PLAYER_THIRST).ifPresent(playerThirst -> {
+                    playerThirst.addThirst(1);
+
+                    ModMessages.sendToPlayer(new ThirstDataSyncServerToClientPacket(playerThirst.getThirst()), player);
+
+                });
             }
             else
             {
-                player.sendSystemMessage(Component.translatable(MESSAGE_NO_DRINK_WATER).withStyle(ChatFormatting.DARK_RED));
-                //TODO show the thurstlevel
+
+                player.getCapability(PlayerThirstProvider.PLAYER_THIRST).ifPresent(playerThirst -> {
+                    ModMessages.sendToPlayer(new ThirstDataSyncServerToClientPacket(playerThirst.getThirst()), player);
+                });
             }
 
 

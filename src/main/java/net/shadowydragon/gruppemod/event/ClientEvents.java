@@ -14,7 +14,7 @@ import net.shadowydragon.gruppemod.util.KeyBinding;
 
 
 public class ClientEvents {
-    @Mod.EventBusSubscriber(modid = GruppeMod.MODID, value = Dist.CLIENT)
+    @Mod.EventBusSubscriber(modid = GruppeMod.MOD_ID, value = Dist.CLIENT)
 
     public static class ClientForgeEvents{
         @SubscribeEvent
@@ -32,7 +32,7 @@ public class ClientEvents {
         }
     }
 
-    @Mod.EventBusSubscriber(modid = GruppeMod.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
+    @Mod.EventBusSubscriber(modid = GruppeMod.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ClientModBusEvents
     {
         @SubscribeEvent

@@ -13,7 +13,7 @@ import net.shadowydragon.gruppemod.block.*;
 public class ModCrativeTabs {
 
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, GruppeMod.MODID);
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, GruppeMod.MOD_ID);
 
     public static void register(IEventBus eventBus)
     {

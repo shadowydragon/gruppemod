@@ -134,4 +134,8 @@ public class GemInfusingStationMenu extends AbstractContainerMenu {
         sourceSlot.onTake(playerIn, sourceStack);
         return copyOfSourceStack;
     }
+
+    public GemInfusingStationBlockEntity getBlockEntity() {
+        return this.blockEntity;
+    }
 }

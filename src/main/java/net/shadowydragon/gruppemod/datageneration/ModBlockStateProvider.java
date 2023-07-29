@@ -13,7 +13,7 @@ import net.shadowydragon.gruppemod.block.*;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
-        super(output, GruppeMod.MODID, exFileHelper);
+        super(output, GruppeMod.MOD_ID, exFileHelper);
     }
 
     @Override
@@ -27,10 +27,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         logBlock((RotatedPillarBlock) ModLogBlocks.EBONY_LOG.get());
         axisBlock((RotatedPillarBlock) ModLogBlocks.EBONY_WOOD.get(), blockTexture(ModLogBlocks.EBONY_LOG.get()), blockTexture(ModLogBlocks.EBONY_LOG.get()));
 
-        axisBlock((RotatedPillarBlock) ModLogBlocks.STRIPPED_EBONY_LOG.get(), new ResourceLocation(GruppeMod.MODID, "block/stripped_ebony_log"),
-                new ResourceLocation(GruppeMod.MODID, "block/stripped_ebony_log_top"));
-        axisBlock((RotatedPillarBlock) ModLogBlocks.STRIPPEDE_EBONY_WOOD.get(), new ResourceLocation(GruppeMod.MODID, "block/stripped_ebony_log"),
-                new ResourceLocation(GruppeMod.MODID, "block/stripped_ebony_log"));
+        axisBlock((RotatedPillarBlock) ModLogBlocks.STRIPPED_EBONY_LOG.get(), new ResourceLocation(GruppeMod.MOD_ID, "block/stripped_ebony_log"),
+                new ResourceLocation(GruppeMod.MOD_ID, "block/stripped_ebony_log_top"));
+        axisBlock((RotatedPillarBlock) ModLogBlocks.STRIPPEDE_EBONY_WOOD.get(), new ResourceLocation(GruppeMod.MOD_ID, "block/stripped_ebony_log"),
+                new ResourceLocation(GruppeMod.MOD_ID, "block/stripped_ebony_log"));
 
         ModLeaveBlocks.LEAVES.getEntries().forEach(this::blockWithItem);
 

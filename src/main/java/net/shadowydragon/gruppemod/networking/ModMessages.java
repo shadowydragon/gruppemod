@@ -8,7 +8,7 @@ import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.simple.SimpleChannel;
 import net.shadowydragon.gruppemod.GruppeMod;
 import net.shadowydragon.gruppemod.networking.packet.DrinkWaterClientToServerPacket;
-import net.shadowydragon.gruppemod.networking.packet.ExampleClientToServerPacket;
+import net.shadowydragon.gruppemod.networking.packet.EnergyDataSyncServerToClientPacket;
 import net.shadowydragon.gruppemod.networking.packet.ThirstDataSyncServerToClientPacket;
 
 public class ModMessages {
@@ -23,7 +23,7 @@ public class ModMessages {
     public static void register()
     {
         SimpleChannel net = NetworkRegistry.ChannelBuilder
-                .named(new ResourceLocation(GruppeMod.MODID, "packages"))
+                .named(new ResourceLocation(GruppeMod.MOD_ID, "packages"))
                 .networkProtocolVersion(() -> "1.0")
                 .clientAcceptedVersions(s -> true)
                 .serverAcceptedVersions(s -> true)
@@ -42,6 +42,12 @@ public class ModMessages {
                 .encoder(ThirstDataSyncServerToClientPacket::toBytes)
                 .consumerMainThread(ThirstDataSyncServerToClientPacket::handle)
                 .add();
+
+        net.messageBuilder(EnergyDataSyncServerToClientPacket.class, packetID(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(EnergyDataSyncServerToClientPacket::new)
+                .encoder(EnergyDataSyncServerToClientPacket::toBytes)
+                .consumerMainThread(EnergyDataSyncServerToClientPacket::handle)
+                .add();
     }
 
     public static <MSG> void sendToServer(MSG message)
@@ -52,5 +58,10 @@ public class ModMessages {
     public static <MSG> void sendToPlayer(MSG message, ServerPlayer player)
     {
         INSTANCE.send(PacketDistributor.PLAYER.with(() -> player), message);
+    }
+
+    public static <MSG> void sendToClient(MSG message)
+    {
+        INSTANCE.send(PacketDistributor.ALL.noArg(), message);
     }
 }

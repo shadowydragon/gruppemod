@@ -10,7 +10,7 @@ import net.shadowydragon.gruppemod.block.ModCustomModelBlocks;
 
 public class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
-            DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, GruppeMod.MODID);
+            DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, GruppeMod.MOD_ID);
 
     public static void register(IEventBus eventBus)
     {

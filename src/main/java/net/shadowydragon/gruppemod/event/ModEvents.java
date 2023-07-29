@@ -1,11 +1,8 @@
 package net.shadowydragon.gruppemod.event;
 
 
-import net.minecraft.ChatFormatting;
-
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
-import net.minecraftforge.client.event.MovementInputUpdateEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.shadowydragon.gruppemod.GruppeMod;
 import net.shadowydragon.gruppemod.networking.ModMessages;
@@ -13,7 +10,6 @@ import net.shadowydragon.gruppemod.networking.packet.ThirstDataSyncServerToClien
 import net.shadowydragon.gruppemod.thirst.PlayerThirst;
 import net.shadowydragon.gruppemod.thirst.PlayerThirstProvider;
 
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
@@ -25,14 +21,14 @@ import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.fml.common.Mod;
 
 
-@Mod.EventBusSubscriber(modid = GruppeMod.MODID)
+@Mod.EventBusSubscriber(modid = GruppeMod.MOD_ID)
 public class ModEvents {
 
     @SubscribeEvent
     public static void onAttachCapabilitiesPlayer(AttachCapabilitiesEvent<Entity> event) {
         if(event.getObject() instanceof Player) {
             if(!event.getObject().getCapability(PlayerThirstProvider.PLAYER_THIRST).isPresent()) {
-                event.addCapability(new ResourceLocation(GruppeMod.MODID, "propertiesthirst"), new PlayerThirstProvider());
+                event.addCapability(new ResourceLocation(GruppeMod.MOD_ID, "propertiesthirst"), new PlayerThirstProvider());
             }
         }
     }

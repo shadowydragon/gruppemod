@@ -1,0 +1,11 @@
+{
+  "type": "gruppemod:gem_infusing",
+  "ingredients": [
+    {
+      "item": "gruppemod:raw_sapphire"
+    }
+  ],
+  "output": {
+    "item": "gruppemod:sapphire"
+  }
+}

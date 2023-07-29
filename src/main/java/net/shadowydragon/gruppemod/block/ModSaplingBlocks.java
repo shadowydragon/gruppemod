@@ -19,7 +19,7 @@ import java.util.function.Supplier;
 public class ModSaplingBlocks {
 
     public static final DeferredRegister<Block> SAPLINGS =
-            DeferredRegister.create(ForgeRegistries.BLOCKS, GruppeMod.MODID);
+            DeferredRegister.create(ForgeRegistries.BLOCKS, GruppeMod.MOD_ID);
 
     public static void register(IEventBus eventBus)
     {

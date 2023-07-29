@@ -24,7 +24,7 @@ import net.shadowydragon.gruppemod.block.entity.GemInfusingStationBlockEntity;
 import net.shadowydragon.gruppemod.block.entity.ModBlockEntities;
 import org.jetbrains.annotations.Nullable;
 
-public class GemInfusingStation extends BaseEntityBlock {
+public class GemInfusingStationBlock extends BaseEntityBlock {
 
     /*public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     public GemInfusingStation(Properties pProperties) {
@@ -54,7 +54,7 @@ public class GemInfusingStation extends BaseEntityBlock {
 
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
-    public GemInfusingStation(Properties properties) {
+    public GemInfusingStationBlock(Properties properties) {
         super(properties);
     }
 

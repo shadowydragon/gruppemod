@@ -16,7 +16,7 @@ import net.shadowydragon.gruppemod.item.ModUseableItems;
 
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
-        super(output, GruppeMod.MODID, existingFileHelper);
+        super(output, GruppeMod.MOD_ID, existingFileHelper);
     }
 
     @Override
@@ -37,14 +37,14 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
-        return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated")).texture("layer0", new ResourceLocation(GruppeMod.MODID, "block/" + item.getId().getPath()));
+        return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated")).texture("layer0", new ResourceLocation(GruppeMod.MOD_ID, "block/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
-        return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated")).texture("layer0", new ResourceLocation(GruppeMod.MODID, "item/" + item.getId().getPath()));
+        return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated")).texture("layer0", new ResourceLocation(GruppeMod.MOD_ID, "item/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
-        return withExistingParent(item.getId().getPath(), new ResourceLocation("item/handheld")).texture("layer0", new ResourceLocation(GruppeMod.MODID, "item/" + item.getId().getPath()));
+        return withExistingParent(item.getId().getPath(), new ResourceLocation("item/handheld")).texture("layer0", new ResourceLocation(GruppeMod.MOD_ID, "item/" + item.getId().getPath()));
     }
 }

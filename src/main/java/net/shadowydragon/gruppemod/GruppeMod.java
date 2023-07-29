@@ -22,13 +22,14 @@ import net.shadowydragon.gruppemod.item.ModFoodItems;
 import net.shadowydragon.gruppemod.item.ModItems;
 import net.shadowydragon.gruppemod.item.ModUseableItems;
 import net.shadowydragon.gruppemod.networking.ModMessages;
+import net.shadowydragon.gruppemod.recipe.ModRecipes;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(GruppeMod.MODID)
+@Mod(GruppeMod.MOD_ID)
 public class GruppeMod {
     // Define mod id in a common place for everything to reference
-    public static final String MODID = "gruppemod";
+    public static final String MOD_ID = "gruppemod";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
@@ -49,6 +50,8 @@ public class GruppeMod {
         ModBlockEntities.register(modEventBus);
 
         ModMenuTypes.register(modEventBus);
+
+        ModRecipes.register(modEventBus);
 
 
         // Register the commonSetup method for modloading
@@ -82,7 +85,7 @@ public class GruppeMod {
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {

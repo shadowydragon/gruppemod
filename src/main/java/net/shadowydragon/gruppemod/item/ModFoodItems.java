@@ -9,7 +9,7 @@ import net.shadowydragon.gruppemod.GruppeMod;
 
 public class ModFoodItems {
     public static final DeferredRegister<Item> FOODS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, GruppeMod.MODID);
+            DeferredRegister.create(ForgeRegistries.ITEMS, GruppeMod.MOD_ID);
 
     public static void register(IEventBus eventBus)
     {

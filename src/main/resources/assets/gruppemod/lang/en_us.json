@@ -27,5 +27,6 @@
 
   "message.gruppemod.drink_water": "You have drunk Water\nYour Thirst level is: ",
   "message.gruppemod.no_drink_water": "There is no water around you to drink",
-  "gruppemod.entitytitel.gem_infusing_station": "Gem Infusing Station"
+  "gruppemod.entitytitel.gem_infusing_station": "Gem Infusing Station",
+  "gruppemod.jeicategory.gem_infusing_station": "Gem Infusing Station"
 }

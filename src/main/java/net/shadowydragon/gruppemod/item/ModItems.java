@@ -1,18 +1,17 @@
 package net.shadowydragon.gruppemod.item;
 
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowydragon.gruppemod.GruppeMod;
-import net.shadowydragon.gruppemod.item.custom.MetalDetectorItem;
+import net.shadowydragon.gruppemod.item.custom.EnergyItems;
 
 public class ModItems {
 
     public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, GruppeMod.MODID);
+            DeferredRegister.create(ForgeRegistries.ITEMS, GruppeMod.MOD_ID);
 
     //This is an Example how you crate a new Item
     public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("itemname",
@@ -26,7 +25,12 @@ public class ModItems {
             ()->new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",
-            ()->new Item(new Item.Properties()));
+            ()->new EnergyItems(new Item.Properties()){
+                @Override
+                public int energyValue() {
+                    return 100;
+                }
+            });
 
 
 

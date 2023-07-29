@@ -1,22 +1,18 @@
 package net.shadowydragon.gruppemod.block;
 
-import net.minecraft.client.resources.model.Material;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.client.model.obj.ObjMaterialLibrary;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.shadowydragon.gruppemod.GruppeMod;
-import net.shadowydragon.gruppemod.block.custom.ModFlammableRotatedPillarBlock;
 import net.shadowydragon.gruppemod.item.ModItems;
 
 import java.util.function.Supplier;
@@ -24,7 +20,7 @@ import java.util.function.Supplier;
 public class ModBlocks {
 
     public static final DeferredRegister<Block> BLOCKS =
-            DeferredRegister.create(ForgeRegistries.BLOCKS, GruppeMod.MODID);
+            DeferredRegister.create(ForgeRegistries.BLOCKS, GruppeMod.MOD_ID);
 
     public static void register(IEventBus eventBus)
     {

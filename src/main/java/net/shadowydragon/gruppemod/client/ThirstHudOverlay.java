@@ -1,16 +1,15 @@
 package net.shadowydragon.gruppemod.client;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.gui.overlay.IGuiOverlay;
 import net.shadowydragon.gruppemod.GruppeMod;
 
 public class ThirstHudOverlay {
-    private static final ResourceLocation FILLED_THIRST = new ResourceLocation(GruppeMod.MODID,
+    private static final ResourceLocation FILLED_THIRST = new ResourceLocation(GruppeMod.MOD_ID,
             "textures/hud/thirst/filled_thirst.png");
-    private static final ResourceLocation EMPTY_THIRST = new ResourceLocation(GruppeMod.MODID,
+    private static final ResourceLocation EMPTY_THIRST = new ResourceLocation(GruppeMod.MOD_ID,
             "textures/hud/thirst/empty_thirst.png");
 
     public static final IGuiOverlay HUD_THIRST = ((gui, guiGraphics, partialTick, screenWidth, screenHeight) -> {

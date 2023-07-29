@@ -14,7 +14,7 @@ import net.shadowydragon.gruppemod.gui.geminfusingstation.GemInfusingStationMenu
 
 public class ModMenuTypes {
     public static final DeferredRegister<MenuType<?>> MENUS =
-            DeferredRegister.create(ForgeRegistries.MENU_TYPES, GruppeMod.MODID);
+            DeferredRegister.create(ForgeRegistries.MENU_TYPES, GruppeMod.MOD_ID);
 
     public static final RegistryObject<MenuType<GemInfusingStationMenu>> GEM_INFUSING_STATION_MENU =
             registerMenuType(GemInfusingStationMenu::new, "gem_infusing_station_menu");

@@ -18,7 +18,7 @@ import java.util.function.Supplier;
 public class ModLogBlocks {
 
     public static final DeferredRegister<Block> LOGS =
-            DeferredRegister.create(ForgeRegistries.BLOCKS, GruppeMod.MODID);
+            DeferredRegister.create(ForgeRegistries.BLOCKS, GruppeMod.MOD_ID);
 
     public static void register(IEventBus eventBus)
     {

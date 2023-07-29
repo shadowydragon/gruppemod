@@ -11,7 +11,7 @@ import net.shadowydragon.gruppemod.item.custom.MetalDetectorItem;
 
 public class ModUseableItems {
     public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, GruppeMod.MODID);
+            DeferredRegister.create(ForgeRegistries.ITEMS, GruppeMod.MOD_ID);
 
 
     public static final RegistryObject<Item> METAL_DETECTOR = ITEMS.register("metal_detector",

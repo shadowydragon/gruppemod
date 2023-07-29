@@ -22,7 +22,7 @@ import java.util.function.Supplier;
 public class ModLeaveBlocks {
 
     public static final DeferredRegister<Block> LEAVES =
-            DeferredRegister.create(ForgeRegistries.BLOCKS, GruppeMod.MODID);
+            DeferredRegister.create(ForgeRegistries.BLOCKS, GruppeMod.MOD_ID);
 
     public static void register(IEventBus eventBus)
     {
